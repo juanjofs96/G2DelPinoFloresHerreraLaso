@@ -1364,7 +1364,7 @@
 										"$ref": "AAAAAAFoNelNbJTJlsk="
 									},
 									"edgePosition": 1,
-									"text": "id_profesor=id_profesor"
+									"text": "cedula=cedula"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1978,7 +1978,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnyC9R9ZK4ypI="
 							},
-							"name": "id_profesor=id_profesor",
+							"name": "cedula=cedula",
 							"end1": {
 								"_type": "ERDRelationshipEnd",
 								"_id": "AAAAAAFoNelNbJTG3SA=",
@@ -2009,7 +2009,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnyC9R9ZK4ypI="
 							},
-							"name": "id_profesor",
+							"name": "cedula",
 							"length": 0,
 							"primaryKey": true
 						},
@@ -2269,7 +2269,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnyC/VDJLSHNY="
 							},
-							"name": "id_profesor",
+							"name": "cedula",
 							"length": 0,
 							"foreignKey": true
 						}
