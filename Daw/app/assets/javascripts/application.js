@@ -18,4 +18,4 @@
 //= require d3
 //= require c3
 //= require grafica
-= require_tree .
+//= require_tree .

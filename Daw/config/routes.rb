@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :estudiantes
+  
   get 'noticias/index'
 
   get 'inscripciones/index'

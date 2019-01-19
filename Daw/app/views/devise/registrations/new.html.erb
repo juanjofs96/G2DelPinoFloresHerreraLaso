@@ -14,8 +14,8 @@
       <div class="row">
         <header class="col-xl-12">
           <div class="row justify-content-center">
-          	<h1 class="col-10"><%= link_to("Academia Politécnica de Nivelación", root_path) %></h1>
-          	<%= link_to image_tag("logonavidad.jpg", id: "logo", class: "img-responsive") %>
+            <h1 class="col-10"><%= link_to("Academia Politécnica de Nivelación", root_path) %></h1>
+            <%= link_to image_tag("logonavidad.jpg", id: "logo", class: "img-responsive") %>
           </div>
         </header>
         
@@ -39,14 +39,13 @@
         </nav>
       </div>
 
-      <div class="container">
+      <!--div class="container">
       <div class="row">
         <section class="col-xl-9">
           <h2>Ingresa tus datos aquí para la inscripción al curso que desees</h2>
           <form>
             <div class="form-row">
               <div class="form-group col-md-6">
-
                 <label>Nombres</label>
                 <input pattern="^([a-zA-Z0-9)$" required="required" maxlength="20" type="text" class="form-control" placeholder="First name">
               </div>
@@ -122,13 +121,67 @@
           
         </section>
         <div id="infoPagForm" class="text-center col-xl-3">
-          <!--img id="logoins" class="img-responsive img-rounded" src="../images/logo.png" alt="logoins"-->
+          
           <%= link_to image_tag("logo.png", id: "logoins", class: "img-responsive img-rounded", alt: "logoins") %>
           <div class="col-xl-12">Academia Politécnica de Nivelación</div>
           <div class="col-xl-12">Dirección: Alborada, 7ma etapa</div>
           <div class="col-xl-12">Teléfono: (04) 5127128</div>
         </div>
-      </div>
+      </div-->
+      <h2>Registrarse</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= f.label :nombres %><br />
+              <%= f.text_field :nombres, pattern: "^([a-zA-Z0-9)$", required: "required", placeholder: "Ingresa tus nombres", class: "form-control" %>
+            </div>
+
+            <div class="form-group col-md-6">
+              <%= f.label :apellidos %><br />
+              <%= f.text_field :apellidos, pattern: "^([a-zA-Z0-9)$", required: "required", placeholder: "Ingresa tus apellidos", class: "form-control"%>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="form-group col-md-6">
+              <%= f.label :Fecha_de_Nacimiento %><br />
+              <%= f.text_field :fecha_nac, value: "2000-01-01", type: "date", class: "form-control"%>
+            </div>
+          </div>
+        </form>
+
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
     </div>
 
       <div class="row bg-secondary" id="social">
@@ -145,7 +198,7 @@
 
       <div class="row">
         <footer class="col-xl-12">
-          <p class="text-center">&copy;2018 Academia Politécnica de Nivelación. Todos los derechos reservados.</p>
+          <p class="text-center">&copy;2019 Academia Politécnica de Nivelación. Todos los derechos reservados.</p>
           <p class="text-right">Sitio desarrollado por: Juan José Flores y Anthony Herrera</p>
         </footer>
       </div>

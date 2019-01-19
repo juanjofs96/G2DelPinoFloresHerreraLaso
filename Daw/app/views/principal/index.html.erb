@@ -30,11 +30,11 @@
           </button>
           <div id="menuPrincipal" class="collapse navbar-collapse">
             <ul class="list-inline navbar-nav mx-auto">
-              <li class="mr-5 list-inline-item nav-item active" ><a class="nav-link" href="nosotros/index">Nosotros</a></li>
-              <li class="mr-5 list-inline-item nav-item active" ><a class="nav-link" href="calendario/index">Calendario</a></li>
-              <li class="mr-5 list-inline-item nav-item active" ><a class="nav-link" href="noticias/index">Noticias</a></li>
-              <li class="mr-5 list-inline-item nav-item active" ><a class="nav-link" href="preguntas/index">Preguntas Frecuentes</a></li>
-              <li class="mr-5 list-inline-item nav-item active" ><a class="nav-link" href="contactenos/index">Contáctenos</a></li>
+              <li class="mr-5 list-inline-item nav-item active" ><%=link_to("Nosotros", root_path + "nosotros/index", class: "nav-link") %></li>
+              <li class="mr-5 list-inline-item nav-item active" ><%= link_to("Calendario", root_path + "calendario/index", class: "nav-link") %></li>
+              <li class="mr-5 list-inline-item nav-item active" ><%= link_to("Noticias", root_path + "noticias/index", class: "nav-link") %></li>
+              <li class="mr-5 list-inline-item nav-item active" ><%= link_to("Preguntas Frecuentes", root_path + "preguntas/index", class: "nav-link") %></li>
+              <li class="mr-5 list-inline-item nav-item active" ><%= link_to("Contáctenos", root_path + "contactenos/index", class: "nav-link") %></li>
 
             </ul>
           </div>
@@ -44,7 +44,8 @@
       <div class="row">
         <h2 class="mt-3 mb-3 col-xl-12 text-center">
           <!--a id="inscripciones" href="inscripciones.html">Inscripciones aquí!!!</a-->
-          <%= link_to("Inscripciones aquí!!!", root_path + "inscripciones/index", class: "nav-link", id: "inscripciones") %>
+          <!--%= link_to("Inscripciones aquí!!!", root_path + "inscripciones/index", class: "nav-link", id: "inscripciones") %-->
+          <%= link_to("Inscripciones aquí!!!", new_estudiante_registration_path, class: "nav-link", id: "inscripciones") %>
         </h2>
       </div>
 

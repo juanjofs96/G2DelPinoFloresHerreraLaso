@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190110052752) do
+ActiveRecord::Schema.define(version: 20190119201059) do
 
   create_table "calificacions", force: :cascade do |t|
     t.float "nota"
@@ -34,14 +34,20 @@ ActiveRecord::Schema.define(version: 20190110052752) do
     t.index ["profesor_id"], name: "index_cursos_on_profesor_id"
   end
 
-  create_table "estudiantes", id: false, force: :cascade do |t|
-    t.string "cedula"
+  create_table "estudiantes", primary_key: "cedula", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "nombres"
     t.string "apellidos"
     t.string "fecha_nac"
     t.string "domicilio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_estudiantes_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_estudiantes_on_reset_password_token", unique: true
   end
 
   create_table "facturas", force: :cascade do |t|
