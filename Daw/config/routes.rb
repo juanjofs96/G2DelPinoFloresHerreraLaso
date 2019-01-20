@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'principal/index'
 
+  get 'estudiantes/cuenta'
+
   root 'principal#index'
 
   resources :pagos do
