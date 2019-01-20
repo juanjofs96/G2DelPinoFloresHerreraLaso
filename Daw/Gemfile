@@ -17,6 +17,8 @@ gem 'd3-rails'
 
 gem 'c3-rails'
 
+gem 'react-rails'
+
 gem 'devise'
 
 # Use sqlite3 as the database for Active Record
