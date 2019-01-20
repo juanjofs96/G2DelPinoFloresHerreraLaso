@@ -1,38 +1,89 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-    <%= f.label :email, class: "col-sm-2 control-label" %>
-    <div class="col-sm-6">
-        <%= f.email_field :email, autofocus: true , class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password, class: "col-sm-2 control-label" %>
-    <div class="col-sm-6">
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-    </div>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="form-group">
-      <div class="col-sm-6 col-sm-offset-2">
-        <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="noticias, informacion, inscripciones, html, daw, cursos, nivelacion">
+    <meta name="author" content="Juan Jose Flores, Anthony Herrera">
+    <!-- Bootstrap CSS -->
+    <!--link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"-->
+    <title>Academia Politecnica de Nivelación</title>
+    <!--link href="../css/estilo.css" rel="stylesheet" type="text/css"-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <header class="col-sm-12">
+          <div class="row justify-content-center">
+            <h1 class="col-xl-10">Academia Politécnica de Nivelación</h1>
+            <!--img id="logo" class="img-responsive" src="images/logonavidad.jpg" alt="logo"-->
+            <%= link_to image_tag("logonavidad.jpg", id: "logo", class: "img-responsive") %>
+          </div>
+        </header>
+        
       </div>
-  </div>
-  <% end -%>
-  <div class="form-group">
-    <div class="col-sm-6 col-sm-offset-2">
-      <%= f.submit "Sign in", class: 'btn btn-primary' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-6 col-sm-offset-2">
-      <%= render "devise/shared/links" %>
-    </div>
-  </div>
-  
-<% end %>
 
+      <div class="login-form">
+        <h2>Log in</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-group">
+            <%= f.label :email, class: "col-sm-2 control-label" %>
+            <div class="col-sm-6">
+              <%= f.email_field :email, autofocus: true, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password, class: "col-sm-2 control-label" %>
+            <div class="col-sm-6">
+              <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+            </div>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="form-group">
+              <div class="col-sm-6 col-sm-offset-2">
+                <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+              </div>
+            </div>
+          <% end -%>
+          <div class="form-group">
+            <div class="col-sm-6 col-sm-offset-2">
+              <%= f.submit "Sign in", class: 'btn btn-primary' %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-6 col-sm-offset-2">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+  
+        <% end %>
+
+      </div>
+
+      <div class="row bg-secondary" id="social">
+        <div class="col-xl-12">
+          <div class="row">
+            <ul class="col-xl-12 list-inline mx-auto" id="redes">
+              <li class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 list-inline-item"><a id="face" href="https://www.facebook.com/pg/politecnica.apn/posts/?ref=page_internal">facebook</a></li>
+              <li class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 list-inline-item"><a id="twi" href="#">twitter</a></li>
+              <li class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 list-inline-item"><a id="insta" href="https://www.instagram.com/politecnica.apn/?hl=es-la">instagram</a></li>
+            </ul> 
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <footer class="col-xl-12">
+          <p class="text-center">&copy;2019 Academia Politécnica de Nivelación. Todos los derechos reservados.</p>
+          <p class="text-right">Sitio desarrollado por: Juan José Flores y Anthony Herrera</p>
+        </footer>
+      </div>
+
+    </div>
+
+ </body>
+  
+</html>
 
