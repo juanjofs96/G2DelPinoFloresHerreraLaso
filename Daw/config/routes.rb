@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :estudiantes
-  
+
   get 'noticias/index'
 
   get 'inscripciones/index'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'nosotros/index'
 
   get 'principal/index'
+
   root 'principal#index'
 
   resources :pagos do
