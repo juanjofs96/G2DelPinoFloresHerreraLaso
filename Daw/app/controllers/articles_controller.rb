@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        archivo = File.read('app/assets/data/noticias.json')
+        archivo = File.read('public/noticias.json')
         noticiasHash = JSON.parse(archivo)
         
         @article = Article.new(article_params)
@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
         puts noticiasHash
         noticiasHash.unshift(nuevaNoticia)
         puts noticiasHash
-        File.open("app/assets/data/noticias.json","w") do |f|
+        File.open("public/noticias.json","w") do |f|
             f.write(noticiasHash.to_json)
         end
 

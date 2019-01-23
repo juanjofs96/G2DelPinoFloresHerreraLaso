@@ -54,7 +54,7 @@ function loadNewsXml() {
 
 $(document).ready(function(){
   loadNewsJson();
-  loadNewsXml();
+  //loadNewsXml();
   $("button").click(function(e){
 
     var texto = $('input#buscador').val();
