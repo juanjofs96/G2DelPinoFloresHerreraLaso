@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
         File.open("public/noticias.json","w") do |f|
             f.write(noticiasHash.to_json)
         end
+        redirect_to admins_dashboard_path
 
     end
 
