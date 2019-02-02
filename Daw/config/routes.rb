@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins, path: 'admin', skip: :registrations
   devise_for :estudiantes
 
   get 'noticias/index'
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   get 'principal/index'
 
   get 'estudiantes/cuenta'
+
+  get 'admins/dashboard'
 
   root 'principal#index'
 

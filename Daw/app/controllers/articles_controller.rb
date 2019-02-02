@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
     require 'json'
+    before_action :authenticate_admin!
+    
     def new
     end
 
