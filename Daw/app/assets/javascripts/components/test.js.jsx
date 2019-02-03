@@ -1,9 +1,16 @@
-var Test = createReactClass({
+class Test extends React.Component {
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	      title: props.post
+	    };
+	}
 
-  render: function() {
-    return (
-  		<h2> cacamol</h2>
-  	);
-  }
-});
-
+	render() {
+	    return (
+	      <div>
+	      	<h2>{this.state.title}</h2>
+	      </div>
+	    );
+	}
+}

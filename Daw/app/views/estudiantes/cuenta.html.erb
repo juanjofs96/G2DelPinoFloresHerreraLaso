@@ -1,4 +1,4 @@
 <h2>login exitoso</h2>
 <h3><%= current_estudiante.nombres %> <%= current_estudiante.apellidos %></h3>
-<%= react_component "Test" %>
+<%= react_component "Test" , {post: @testxd } %>
 <%= link_to "logout", destroy_estudiante_session_path, method: :delete %>
