@@ -42,46 +42,56 @@
       <div class="row">
         <section class="col-xl-9">
           <h2>Ingresa tus datos aquí para contacto</h2>
+          <%= flash[:notice] %>
+          <%= form_tag 'create',method: :post do %>
           <form>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label>Nombres</label>
-                <input  pattern="^([a-zA-Z0-9)$" required="required" maxlength="20" type="text" class="form-control" placeholder="First name">
+                <input id="nombres" pattern="^([a-zA-Z0-9)$" required="required" maxlength="20" type="text" class="form-control" placeholder="First name">
+                <%= text_field_tag :nombres %> <br/>
               </div>
               <div class="form-group col-md-6">
                 <label>Apellidos</label>
-                <input pattern="^([a-zA-Z0-9)$" required="required" maxlength="20" type="text" class="form-control" placeholder="Last name">
+                <input id="apellidos" pattern="^([a-zA-Z0-9)$" required="required" maxlength="20" type="text" class="form-control" placeholder="Last name">
+                <%= text_field_tag :apellidos %> <br/>
               </div>
             </div>
               <div class="form-group">
-                <label for="inputEmail4">Email</label>
-                <input type="email" required="required" class="form-control" id="inputEmail4" placeholder="Email">
+                <label>Email</label>
+                <input id="email" type="email" required="required" class="form-control" placeholder="Email">
+                <%= text_field_tag :email %> <br/>
               </div>
             <div class="form-group">
-              <label for="inputAddress">Dirección</label>
-              <input type="text" required="required" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              <label>Dirección</label>
+              <input type="text" required="required" class="form-control" id="direccion" placeholder="1234 Main St">
+              <%= text_field_tag :direccion %> <br/>
             </div>
             <div class="form-group">
-              <label for="inputAddress2">Teléfono</label>
-              <input type="text" required="required" class="form-control" id="inputAddress2" placeholder="+593 999999999">
+              <label>Teléfono</label>
+              <input type="text" required="required" class="form-control" id="telefono" placeholder="+593 999999999">
+              <%= text_field_tag :telefono %> <br/>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputCity">Ciudad</label>
-                <input type="text" required="required" class="form-control" id="inputCity">
+                <label>Ciudad</label>
+                <input type="text" required="required" class="form-control" id="ciudad" placeholder="Guayaquil">
+                <%= text_field_tag :ciudad %> <br/>
               </div>
               <div class="form-group col-md-4">
-                <label for="inputState">Zona</label>
-                <select id="inputState" class="form-control">
+                <label>Zona</label>
+                <select id="zona" class="form-control">
                   <option selected>Elige...</option>
                   <option>Sur</option>
                   <option>Centro</option>
                   <option>Norte</option>
                 </select>
+                <%= select_tag :zona, options_for_select([["Select One", ""], "Sur","Centro","Norte"]) %> <br/>
               </div>
               <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
+                <label>Zip</label>
+                <input type="text" class="form-control" id="zip">
+                <%= text_field_tag :zip %> <br/>
               </div>
             </div>
 
@@ -92,19 +102,22 @@
                 </div>
               </div>
               <div class="col-auto my-1">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preferencia</label>
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <label class="mr-sm-2 sr-only">Preferencia</label>
+                <select class="custom-select mr-sm-2" id="curso">
                   <option selected>Elige...</option>
                   <option value="1">Ser Bachiller</option>
                   <option value="2">Pre-Politecnico</option>
                 </select>
+                <%= select_tag :curso, options_for_select([["Select One", ""], "Ser Bachiller","Pre-Politecnico"]) %> <br/>
               </div>
 
               <div class="col-auto my-1">
                 <button type="submit" class="btn btn-primary">Envía</button>
+                <%= submit_tag "Envia", class: "btn btn-primary" %>
               </div>
             </div>
           </form>      
+          <% end %>
         </section>
         <div id="infoPagForm" class="text-center col-xl-3">
           <!--img id="logocon" class="img-responsive img-rounded" src="../images/logo.png" alt="logocon"-->

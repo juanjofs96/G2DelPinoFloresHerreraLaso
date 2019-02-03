@@ -5,5 +5,4 @@ class EstudiantesController < ApplicationController
 		@testxd = "Hello World"
 	end
 
-
 end

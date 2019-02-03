@@ -1,4 +1,4 @@
-class ContactenosController < ApplicationController
+class SendController < ApplicationController
   def index
   end
 
@@ -6,6 +6,6 @@ class ContactenosController < ApplicationController
   	@params= params
     UserMailer.contact_send(params).deliver
  	flash[:notice]= "formulario enviado"
- 	redirect_to '/contactenos/index'
+ 	redirect_to '/send/index'
   end
 end

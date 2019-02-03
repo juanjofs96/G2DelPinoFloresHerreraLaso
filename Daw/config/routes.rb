@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :admins, path: 'admin', skip: :registrations
   devise_for :estudiantes
 
+  get 'contactenos/index'
+  post 'contactenos/create'
+
   get 'noticias/index'
 
   get 'inscripciones/index'
@@ -21,6 +24,10 @@ Rails.application.routes.draw do
   get 'admins/dashboard'
 
   root 'principal#index'
+
+  #formulario de prueba para envio de correo
+  get 'send/index'
+  post 'send/create'
 
   resources :pagos do
     resources :facturas, shallow: true #shalow nesting
