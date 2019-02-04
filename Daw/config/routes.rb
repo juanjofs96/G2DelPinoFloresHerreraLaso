@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins, path: 'admin', skip: :registrations
+  devise_for :admins #, path: 'admin', skip: :registrations
   devise_for :estudiantes
 
   get 'contactenos/index'
