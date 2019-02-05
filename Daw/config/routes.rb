@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'estudiantes/cuenta'
 
+  get 'estudiantes/vistaNotas'
+
   get 'admins/dashboard'
 
   root 'principal#index'

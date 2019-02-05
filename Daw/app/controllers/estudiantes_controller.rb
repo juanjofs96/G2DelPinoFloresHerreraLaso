@@ -5,4 +5,8 @@ class EstudiantesController < ApplicationController
 		@testxd = "Hello World"
 	end
 
+	def vistaNotas
+		@usuario = current_estudiante.cedula
+	end
+
 end
