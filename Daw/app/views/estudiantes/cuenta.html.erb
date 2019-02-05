@@ -1,31 +1,84 @@
-<h2>login exitoso</h2>
-<h3><%= current_estudiante.nombres %> <%= current_estudiante.apellidos %></h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
 
- <table width=”650" id=”main” border=”0" cellpadding=”0" cellspacing=”20">
- <tr>
- <td class=”divider” colspan=”2" bgcolor=”#555555" height=”2"></td>
- </tr>
- <tr>
- <td colspan=”2">
- <p>Nombres: <%= current_estudiante.nombres %></p>
- <p>Apellidos: <%= current_estudiante.apellidos %></p>
- <p>Cedula: <%= current_estudiante.cedula %></p>
- <p>Fecha de nacimiento: <%= current_estudiante.fecha_nac %></p>
- <p>Email: <%= current_estudiante.email %></p>
- <p>Direccion: <%= current_estudiante.domicilio %></p>
- 
+<div class="container">
+	<div class="row sticky-top" id="barralinks">
+    	<nav class="navbar navbar-expand-xl navbar-dark col-xl-12">
+        	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuPrincipal">
+         		<span class="navbar-toggler-icon"></span>
+         	</button>
+         	<div id="menuPrincipal" class="collapse navbar-collapse">
+           		<ul class="list-inline navbar-nav mx-auto">
+              		<li class="mr-5 list-inline-item nav-item active" ><h3>Bienvenido <%= current_estudiante.nombres %> <%= current_estudiante.apellidos %></h3></li>
+            	</ul>
+            	<ul class="nav navbar-nav navbar-right">
+              		<li><h3><%= link_to("Logout", destroy_admin_session_path, class: "nav-link", method: "delete") %></h3></li>
+            	</ul>
+          	</div>
+    	</nav>
+	</div>
 
- </td>
- </tr>
- <tr>
- <td class=”divider” colspan=”2" bgcolor=”#555555" height=”2"></td>
- </tr>
- <tr>
- <td id=”footer” colspan=”2" align=”center”>
- <p>&copy;2019 Academia Politecnica de Nivelacion</p>
- </td>
- </tr>
- </table>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#perfil">Perfil</a></li>
+    <li><a data-toggle="tab" href="#calificacion">Calificaciones</a></li>
+    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="perfil" class="tab-pane fade in active">
+      <h3>Perfil de Usuario</h3>
+      <table width=”650" id=”main” border=”0" cellpadding=”0" cellspacing=”20">
+ 		<tr>
+ 		<td class=”divider” colspan=”2" bgcolor=”#555555" height=”2"></td>
+ 		</tr>
+ 		<tr>
+ 		<td colspan=”2">
+ 		<p>Nombres: <%= current_estudiante.nombres %></p>
+ 		<p>Apellidos: <%= current_estudiante.apellidos %></p>
+ 		<p>Cedula: <%= current_estudiante.cedula %></p>
+ 		<p>Fecha de nacimiento: <%= current_estudiante.fecha_nac %></p>
+ 		<p>Email: <%= current_estudiante.email %></p>
+ 		<p>Direccion: <%= current_estudiante.domicilio %></p>
+ 		</td>
+ 		</tr>
+ 		<tr>
+ 		<td class=”divider” colspan=”2" bgcolor=”#555555" height=”2"></td>
+ 		</tr>
+ 		<tr>
+ 		<td id=”footer” colspan=”2" align=”center”>
+ 		<p>&copy;2019 Academia Politecnica de Nivelacion</p>
+ 		</td>
+ 		</tr>
+ 	</table>
+    </div>
+
+    <div id="calificacion" class="tab-pane fade">
+      <h3>Calificicaciones</h3>
+      <p>Aqui debe mostrar sus calificaciones.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
 
 <%= react_component "Test" , {post: @testxd } %>
 <h4><%= link_to "calificaciones", estudiantes_vistaNotas_path %></h4>
