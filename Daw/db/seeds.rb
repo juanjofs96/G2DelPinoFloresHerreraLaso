@@ -5,4 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Calificacion.create([{nota: 100, estudiante_id: '922657571', curso_id: 'prepolitecnico'}])

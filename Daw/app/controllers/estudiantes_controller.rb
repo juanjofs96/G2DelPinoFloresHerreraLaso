@@ -7,6 +7,7 @@ class EstudiantesController < ApplicationController
 
 	def vistaNotas
 		@usuario = current_estudiante.cedula
+		@notas = Calificacion.find_by estudiante: @usuario
 	end
 
 end
