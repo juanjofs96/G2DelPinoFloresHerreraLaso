@@ -1,0 +1,11 @@
+<%= form_with scope: :estudiante, url: estudiantes_path, local: true do |form| %>
+    <p>
+      <%= form.label :domicilio %><br>
+      <%= form.text_field :domicilio %>
+    </p>
+   
+   
+    <p>
+      <%= form.submit "Actualizar"%>
+    </p>
+  <% end %>
