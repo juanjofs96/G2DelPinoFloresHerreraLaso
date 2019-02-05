@@ -1,5 +1,31 @@
 <h2>login exitoso</h2>
 <h3><%= current_estudiante.nombres %> <%= current_estudiante.apellidos %></h3>
+
+ <table width=”650" id=”main” border=”0" cellpadding=”0" cellspacing=”20">
+ <tr>
+ <td class=”divider” colspan=”2" bgcolor=”#555555" height=”2"></td>
+ </tr>
+ <tr>
+ <td colspan=”2">
+ <p>Nombres: <%= current_estudiante.nombres %></p>
+ <p>Apellidos: <%= current_estudiante.apellidos %></p>
+ <p>Cedula: <%= current_estudiante.cedula %></p>
+ <p>Fecha de nacimiento: <%= current_estudiante.fecha_nac %></p>
+ <p>Email: <%= current_estudiante.email %></p>
+ <p>Direccion: <%= current_estudiante.domicilio %></p>
+ 
+
+ </td>
+ </tr>
+ <tr>
+ <td class=”divider” colspan=”2" bgcolor=”#555555" height=”2"></td>
+ </tr>
+ <tr>
+ <td id=”footer” colspan=”2" align=”center”>
+ <p>&copy;2019 Academia Politecnica de Nivelacion</p>
+ </td>
+ </tr>
+ </table>
 <%= react_component "Test" , {post: @testxd } %>
 <h4><%= link_to "calificaciones", estudiantes_vistaNotas_path %></h4>
 <%= link_to "logout", destroy_estudiante_session_path, method: :delete %>

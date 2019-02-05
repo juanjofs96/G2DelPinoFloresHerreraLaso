@@ -10,6 +10,16 @@ html{
 	position: relative;
 }
 
+svg rect {
+            fill: gray;
+         }
+         
+svg text {
+            fill: yellow;
+            font: 12px sans-serif;
+            text-anchor: end;
+         }
+
 .fin{
 	position: absolute;
 	bottom: 0;
@@ -144,11 +154,10 @@ img:hover {
 
 #social {
 	margin: auto;
-	margin-bottom: 15px;
 	height: 40px;
 	text-align: center;
 	line-height: 40px;
-	position: relative;
+	position: sticky;
 }
 
 footer {
@@ -156,7 +165,7 @@ footer {
 	color: white;
 	font-weight: bold;
 	font-size: 1.1em;
-	position: absolute;
+	position: sticky;
 }
 
 #face {
