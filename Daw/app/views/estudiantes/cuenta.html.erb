@@ -26,6 +26,8 @@
  </td>
  </tr>
  </table>
+
 <%= react_component "Test" , {post: @testxd } %>
 <h4><%= link_to "calificaciones", estudiantes_vistaNotas_path %></h4>
+<h4><%= link_to "Actualizar Domicilio", estudiantes_update_path %></h4>
 <%= link_to "logout", destroy_estudiante_session_path, method: :delete %>

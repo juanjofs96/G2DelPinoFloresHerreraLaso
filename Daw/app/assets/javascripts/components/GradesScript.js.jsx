@@ -2,7 +2,9 @@ class GradesScript extends React.Component {
 	constructor(props) {
 	    super(props);
 	    this.state = {
-	      title: props.post
+	      title: props.post.nota,
+	      cedula: props.post.estudiante,
+	      curso: props.post.curso
 	    };
 	}
 
@@ -10,6 +12,8 @@ class GradesScript extends React.Component {
 	    return (
 	      <div>
 	      	<h2>{this.state.title}</h2>
+	      	<h2>Nombre:{this.state.cedula}</h2>
+	      	<h2>Curso:{this.state.curso}</h2>
 	      </div>
 	    );
 	}

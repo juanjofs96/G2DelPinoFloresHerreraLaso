@@ -25,6 +25,12 @@ Rails.application.routes.draw do
 
   get 'admins/dashboard'
 
+  get 'estudiantes/update'
+
+  post'estudiantes/update'
+
+  get 'estudiantes/delete'
+
   root 'principal#index'
 
   #formulario de prueba para envio de correo
