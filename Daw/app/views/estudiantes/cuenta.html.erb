@@ -71,14 +71,25 @@
 
     <div id="curso" class="tab-pane fade">
       <h3>Mis Cursos</h3>
-      <table>
-      
-      <% @cursoList.each do |p| %>
-      <tr>
-        <td><h4><%= p.nombre %></h4></td>
-      </tr>
-    <% end %>
-</table>
+      <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Duracion</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cursoList.each_index do |p| %>
+        <tr>
+          <td><%= @cursoList[p].nombre %></td>
+          <td><%= @cursoList[p].duracion %> horas</td>
+          <td><%= link_to 'Eliminar', inscripcion_path(@tmp[p]), method: :delete, data: { confirm: 'Estas seguro?'} %></td>
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
+       
       <a class="btn btn-primary" href=<%=new_estudiante_inscripcion_path(current_estudiante)%> role="button">Añadir curso</a>
     </div>
     <div id="menu3" class="tab-pane fade">
