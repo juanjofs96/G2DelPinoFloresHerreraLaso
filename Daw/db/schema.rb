@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190201181347) do
+ActiveRecord::Schema.define(version: 20190206152618) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(version: 20190201181347) do
     t.string "id_curso"
     t.string "nombre"
     t.integer "duracion"
-    t.string "materium_id"
-    t.string "profesor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "materium_id"
+    t.string "profesor_id"
     t.index ["materium_id"], name: "index_cursos_on_materium_id"
     t.index ["profesor_id"], name: "index_cursos_on_profesor_id"
   end
