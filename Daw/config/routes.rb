@@ -25,13 +25,13 @@ Rails.application.routes.draw do
 
   get 'admins/dashboard'
 
-  get 'estudiantes/update'
-
-  post'estudiantes/update'
-
   get 'estudiantes/delete'
 
   root 'principal#index'
+
+  get 'estudiantes/:id/edit', to: 'estudiantes#edit', as: :edit_article
+
+  patch 'estudiantes/:id', to: 'estudiantes#update'
 
   #formulario de prueba para envio de correo
   get 'send/index'
