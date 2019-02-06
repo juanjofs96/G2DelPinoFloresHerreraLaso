@@ -41,12 +41,12 @@ ActiveRecord::Schema.define(version: 20190201181347) do
     t.index ["estudiante_id"], name: "index_calificacions_on_estudiante_id"
   end
 
-  create_table "cursos", id: false, force: :cascade do |t|
+  create_table "cursos", force: :cascade do |t|
     t.string "id_curso"
     t.string "nombre"
     t.integer "duracion"
-    t.integer "materium_id"
-    t.integer "profesor_id"
+    t.string "materium_id"
+    t.string "profesor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["materium_id"], name: "index_cursos_on_materium_id"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20190201181347) do
     t.index ["estudiante_id"], name: "index_inscripcions_on_estudiante_id"
   end
 
-  create_table "materia", id: false, force: :cascade do |t|
+  create_table "materia", force: :cascade do |t|
     t.string "codigo"
     t.string "nombre"
     t.string "descripcion"
@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 20190201181347) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "profesors", id: false, force: :cascade do |t|
+  create_table "profesors", force: :cascade do |t|
     t.string "cedula"
     t.string "nombres"
     t.string "apellidos"
