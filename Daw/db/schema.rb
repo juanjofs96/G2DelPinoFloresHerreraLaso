@@ -81,8 +81,8 @@ ActiveRecord::Schema.define(version: 20190201181347) do
   end
 
   create_table "inscripcions", force: :cascade do |t|
-    t.integer "estudiante_id"
-    t.integer "curso_id"
+    t.string "estudiante_id"
+    t.string "curso_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["curso_id"], name: "index_inscripcions_on_curso_id"

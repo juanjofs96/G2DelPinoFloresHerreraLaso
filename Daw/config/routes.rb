@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :estudiantes
 
   get 'contactenos/index'
+
   post 'contactenos/create'
 
   get 'noticias/index'
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
 
   #formulario de prueba para envio de correo
   get 'send/index'
+  
   post 'send/create'
 
   resources :pagos do

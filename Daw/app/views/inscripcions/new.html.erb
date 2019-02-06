@@ -1,0 +1,9 @@
+<%= form_with(model: [current_estudiante, current_estudiante.inscripcions.build ], local: true) do |form| %>
+ 	<%= form.label :Estudiante  %>
+    <% emp_array = [current_estudiante.id] %>
+    <%= form.select :estudiante_id, options_for_select(emp_array) %> 
+    <%= form.label :Curso  %>
+    <% cursos = Curso.all.map { |n| [n.nombre, n.id] } %>
+    <%= form.select :curso_id, options_for_select(cursos) %> 
+ 	<%= form.submit "registrar" %>
+<% end %>

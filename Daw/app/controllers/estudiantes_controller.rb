@@ -5,7 +5,13 @@ class EstudiantesController < ApplicationController
 	def cuenta
 		@testxd = "Hello World"
 		@estudiante = current_estudiante
-		puts @estudiante.nombres
+		@tmp = Inscripcion.where(estudiante_id: @estudiante.id)
+		@cursoList = []
+		@tmp.each do |m|
+			c = Curso.find(m.curso_id)
+			@cursoList.push(c)
+		end
+		
 	end
 
 	def vistaNotas
