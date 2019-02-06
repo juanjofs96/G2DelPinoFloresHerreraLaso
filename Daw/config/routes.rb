@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   resources :estudiantes do
     resources :facturas
     resources :calificacions, shallow: true
-    resources :inscripcions, shallow: true
+    resources :inscripcions
   end
 
   resources :cursos do

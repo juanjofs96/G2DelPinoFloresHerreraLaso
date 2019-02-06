@@ -1,0 +1,9 @@
+<%= form_with(model: [current_estudiante, @inscripcion], local: true) do |f| %>
+ 	<%= f.label :Estudiante  %>
+    <% emp_array = [current_estudiante.id] %>
+    <%= f.select :estudiante_id, options_for_select(emp_array) %> 
+    <%= f.label :Curso  %>
+    <% cursos = Curso.all.map { |n| [n.nombre, n.id] } %>
+    <%= f.select :curso_id, options_for_select(cursos) %> 
+ 	<%= f.submit "Actualizar" %>
+<% end %>
