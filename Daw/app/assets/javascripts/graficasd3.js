@@ -8,7 +8,7 @@ var svg = d3.select("svg"),
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
          var color = d3.scaleOrdinal([
-            'gray', 'green', 'brown'
+            'gray', 'green', 'brown', 'orange', 'yellow', 'red', 'purple'
          ]);
          
          var pie = d3.pie().value(function(d) { 
@@ -21,7 +21,7 @@ var svg = d3.select("svg"),
          var label = d3.arc()
             .outerRadius(radius).innerRadius(radius - 80);
          
-         d3.csv("populations.csv", function(error, data) {
+         d3.csv("populatidefefons.csv", function(error, data) {
             if (error) {
                throw error;
             }
@@ -49,7 +49,7 @@ var svg = d3.select("svg"),
             .attr("transform", "translate(" + (width / 2 - 120) + "," + 20 + ")")
             .append("text").text("Top population states in india")
             .attr("class", "title")
-            
+     
 
 //grafico #1
 /*
@@ -78,7 +78,7 @@ var svg = d3.select("#g2").append("svg")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("<%= asset_path 'pruebainscripcion.csv' %>", function(error, data) {
+d3.csv("app/assets/javascripts/pruebainscripcion.csv", function(error, data) {
 
     data.forEach(function(d) {
         d.estudiantes = +d.estudiantes;
