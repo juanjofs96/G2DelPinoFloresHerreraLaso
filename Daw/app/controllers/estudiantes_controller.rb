@@ -3,7 +3,8 @@ class EstudiantesController < ApplicationController
 	respond_to :html, :js
 
 	def cuenta
-		@testxd = "Hello World"
+		@usuario = current_estudiante.cedula
+		@notas = Calificacion.find_by estudiante: @usuario
 		@estudiante = current_estudiante
 		@tmp = Inscripcion.where(estudiante_id: @estudiante.id)
 		@cursoList = []
@@ -15,9 +16,11 @@ class EstudiantesController < ApplicationController
 	end
 
 	def vistaNotas
-		@usuario = current_estudiante.cedula
-		@curso = Curso.first
-		@notas = Calificacion.find_by estudiante: @usuario
+		@usuarioTmp = current_estudiante.cedula
+		@notasTmp= Calificacion.where(estudiante_id: @usuario)
+		@notasList =[]
+		@notasTmp.each do |l|
+			@notasList.push(l)
 		
 	end
 

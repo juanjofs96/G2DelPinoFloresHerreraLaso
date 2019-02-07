@@ -1,16 +1,20 @@
 class Calificaciones extends React.Component{
+
 	constructor(props) {
 	    super(props);
+	    this.idCurso = props.post.curso_id;
+	    this.nota = props.post.nota
+	    this.handleClick = this.handleClick.bind(this)
 	    this.state = {
-	      id: props.post.id,
-	      nombre: props.post.nombre
+	      id: "",
+	      nota: ""
 	    };
 	}
 
 	handleClick() {
 		this.setState({
-			id:"caca",
-			nombre: "test"
+			id: this.idCurso,
+			nota: this.nota
 		});
 	}
 
@@ -18,10 +22,11 @@ class Calificaciones extends React.Component{
 		return(
 
 			<div>
-				<button onClick={ (e) => {this.handleClick(); } }> Ver </button>
+				<button onClick={ (e) => {
+					this.handleClick(); } }> Ver </button>
 				<div>
-	      			<h2>Id:{this.state.id}</h2>
-	      			<h2>Nombre:{this.state.nombre}</h2>
+	      			<h4>Curso:{this.state.id}</h4>
+	      			<h4>Nota:{this.state.nota}</h4>
 	      		</div>
 			</div>
 		);

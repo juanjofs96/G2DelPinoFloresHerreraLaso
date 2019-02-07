@@ -67,6 +67,7 @@
     <div id="calificacion" class="tab-pane fade">
       <h3>Calificaciones</h3>
       <p>Aqui debe mostrar sus calificaciones.</p>
+      <%= react_component "Calificaciones" , {post: @notas} %>
     </div>
 
     <div id="curso" class="tab-pane fade">
@@ -104,7 +105,6 @@
 </body>
 </html>
 
-<%= react_component "Test" , {post: @testxd } %>
 <h4><%= link_to "calificaciones", estudiantes_vistaNotas_path %></h4>
 <h4><%= link_to "Cambiar Contraseña", '/estudiantes/edit' %></h4>
 <%= link_to "logout", destroy_estudiante_session_path, method: :delete %>
