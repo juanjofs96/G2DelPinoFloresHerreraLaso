@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  get 'people/index'
+
+  get 'people/new'
+
+  get 'people/create'
+
+  get 'people/edit'
+
+  get 'people/update'
+
+  get 'people/destroy'
+
+
   devise_for :admins #, path: 'admin', skip: :registrations
   devise_for :estudiantes
 
@@ -63,6 +76,9 @@ Rails.application.routes.draw do
   end
   
   resources :articles
+
+
+  resources :people, except: [:show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

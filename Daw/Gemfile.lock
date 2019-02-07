@@ -53,6 +53,7 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    bson (4.4.2)
     builder (3.2.3)
     byebug (10.0.2)
     c3-rails (0.4.18)
@@ -107,6 +108,11 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    mongo (2.7.0)
+      bson (>= 4.4.2, < 5.0.0)
+    mongoid (6.1.1)
+      activemodel (~> 5.0)
+      mongo (>= 2.4.1, < 3.0.0)
     multi_json (1.13.1)
     nio4r (2.3.1)
     nokogiri (1.8.5-x86-mingw32)
@@ -216,6 +222,8 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   json
+  mongo
+  mongoid (~> 6.1.0)
   puma (~> 3.7)
   rails (~> 5.1.6)
   react-rails
