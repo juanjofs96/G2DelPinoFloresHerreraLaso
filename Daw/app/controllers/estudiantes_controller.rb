@@ -52,8 +52,9 @@ class EstudiantesController < ApplicationController
 	end
 
 	private
-    def estudiante_params
-        params.require(:estudiante).permit(:email, :encrypted_password, :cedula, :nombres, :apellidos, :fecha_nac, :domicilio)
-    end
+    	def estudiante_params
+        	params.require(:estudiante).permit(:email, :encrypted_password, :cedula, :nombres, :apellidos, :fecha_nac, :domicilio)
+    	end
+	end
 
 end

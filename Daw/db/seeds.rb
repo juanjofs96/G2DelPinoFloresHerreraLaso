@@ -27,7 +27,7 @@ Curso.create!([{id_curso: 'MATUTINO1', nombre: 'prepolitecnico1', duracion:30, m
 {id_curso: 'VESPERTINO2', nombre: 'serbachiller2', duracion:30, materium_id:'MAT001', profesor_id:'0954252526'},
 {id_curso: 'VESPERTINO3', nombre: 'prepolitecnico4', duracion:30, materium_id:'QUI001', profesor_id:'0954241415'}])
 
-Inscripcion.create!([{estudiante_id: "922657570",curso_id:"MATUTINO1"},
-	{estudiante_id:"922657570",curso_id:"MATUTINO3"}])
-Calificacion.create!([{estudiante_id:"922657570",curso_id:"MATUTINO1",nota: 10},
-	{estudiante_id:"922657570",curso_id:"MATUTINO3",nota: 9}])
+#Inscripcion.create!([{estudiante_id: "922657570",curso_id:"MATUTINO1"},
+#	{estudiante_id:"922657570",curso_id:"MATUTINO3"}])
+#Calificacion.create!([{estudiante_id:"922657570",curso_id:"MATUTINO1",nota: 10},
+#	{estudiante_id:"922657570",curso_id:"MATUTINO3",nota: 9}])
