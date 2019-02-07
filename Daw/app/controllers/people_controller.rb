@@ -1,7 +1,13 @@
 class PeopleController < ApplicationController
   def index
     @people = Person.all
+    
   end
+
+  def inscritos
+    @inscritos = Person.where(curso_id: params[:id])
+  end
+
 
   def new
     @person = Person.new
@@ -38,6 +44,6 @@ class PeopleController < ApplicationController
   end
   private
     def person_params
-      params.require(:person).permit(:nombre, :apellido, :correo, :cedula)
+      params.require(:person).permit(:nombre, :apellido, :correo, :cedula, :curso_id)
     end
 end

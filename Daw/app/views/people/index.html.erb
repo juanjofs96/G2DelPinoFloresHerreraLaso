@@ -14,6 +14,7 @@
       <th>Last Name</th>
       <th>Email</th>
       <th>Cedula</th>
+      <th>Curso</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
     </tr>
@@ -21,7 +22,7 @@
   <tbody>
     <% if @people.size == 0 %>
       <tr>
-        <td colspan="6">No people found.</td>
+        <td colspan="7">No people found.</td>
       </tr>
     <% else %>
       <% @people.each do |person| %>
@@ -30,6 +31,7 @@
           <td><%= person.apellido %></td>
           <td><%= person.correo %></td>
           <td><%= person.cedula %></td>
+          <td><%= person.curso_id %></td>
           <td>
             <%= link_to "Edit", edit_person_path(person), class: "btn btn-default" %>
           </td>

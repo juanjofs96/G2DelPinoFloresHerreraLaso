@@ -4,4 +4,5 @@ class Person
   field :apellido, type: String
   field :correo, type: String
   field :cedula, type: String
+  field :curso_id, type: String
 end

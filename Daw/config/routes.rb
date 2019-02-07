@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'people/destroy'
 
+  get 'people/inscritos'
+
 
   devise_for :admins #, path: 'admin', skip: :registrations
   devise_for :estudiantes
