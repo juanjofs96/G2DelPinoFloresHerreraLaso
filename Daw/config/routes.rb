@@ -35,6 +35,8 @@ Rails.application.routes.draw do
 
   get 'principal/index'
 
+  get 'estudiantes/testaso'
+  
   get 'estudiantes/cuenta'
 
   get 'estudiantes/vistaNotas'

@@ -84,8 +84,10 @@
       <tbody>
         <% @cursoList.each_index do |p| %>
         <tr>
-          <td><%= @cursoList[p].nombre %></td>
+          <td><%= @cursoList[p] %></td>
           <td><%= @cursoList[p].duracion %> horas</td>
+          <td><%= @cursoList[p].id_curso %></td>
+          <td><%= link_to 'Ver Compañeros', estudiantes_testaso_path(@cursoList[p]) %></td>
           <td><%= link_to 'Editar', edit_estudiante_inscripcion_path(@estudiante, @tmp[p]) %></td>
           <td><%= link_to 'Eliminar', estudiante_inscripcion_path(@tmp[p].estudiante, @tmp[p]), method: :delete, data: { confirm: 'Estas seguro?'} %></td>
         </tr>

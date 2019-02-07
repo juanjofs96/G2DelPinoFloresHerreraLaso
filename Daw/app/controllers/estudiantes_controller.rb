@@ -20,6 +20,10 @@ class EstudiantesController < ApplicationController
 		@estudiante = current_estudiante
 	end
 
+	def testaso
+		@curso = Curso.find(params[:id_curso])
+		@nombre = @curso.nombre
+	end
 
 	def update
 		@estudiante = current_estudiante
@@ -32,9 +36,6 @@ class EstudiantesController < ApplicationController
 		#current_estudiante.save
 		#puts @estudiante.cedula
 		@estudiante.update(domicilio: params[:domicilio])
-		puts "DOMICILIOOOOO"
-		puts params[:domicilio]
-		puts "VEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRRRRGAAAAAAAAAAAAAAAAAAAAAA"
 		redirect_to '/estudiantes/cuenta'
 
 	end
