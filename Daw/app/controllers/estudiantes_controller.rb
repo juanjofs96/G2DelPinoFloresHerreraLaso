@@ -3,9 +3,9 @@ class EstudiantesController < ApplicationController
 	respond_to :html, :js
 
 	def cuenta
-		@usuario = current_estudiante.cedula
-		@notas = Calificacion.find_by estudiante: @usuario
 		@estudiante = current_estudiante
+		@notas = Calificacion.find_by estudiante: @estudiante.cedula
+
 		@tmp = Inscripcion.where(estudiante_id: @estudiante.id)
 		@cursoList = []
 		@tmp.each do |m|
@@ -15,19 +15,15 @@ class EstudiantesController < ApplicationController
 		
 	end
 
-	def vistaNotas
-		@usuarioTmp = current_estudiante.cedula
-		@notasTmp= Calificacion.where(estudiante_id: @usuario)
-		@notasList =[]
-		@notasTmp.each do |l|
-			@notasList.push(l)
-		
-	end
 
 	def edit 
 		@estudiante = current_estudiante
 	end
 
+	def testaso
+		@curso = Curso.find(params[:id_curso])
+		@nombre = @curso.nombre
+	end
 
 	def update
 		@estudiante = current_estudiante
@@ -40,9 +36,6 @@ class EstudiantesController < ApplicationController
 		#current_estudiante.save
 		#puts @estudiante.cedula
 		@estudiante.update(domicilio: params[:domicilio])
-		puts "DOMICILIOOOOO"
-		puts params[:domicilio]
-		puts "VEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRRRRGAAAAAAAAAAAAAAAAAAAAAA"
 		redirect_to '/estudiantes/cuenta'
 
 	end

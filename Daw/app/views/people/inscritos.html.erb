@@ -1,0 +1,29 @@
+<h1>Inscritos</h1>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Cedula</th>
+      <th>Curso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @inscritos.size == 0 %>
+      <tr>
+        <td colspan="5">No people found.</td>
+      </tr>
+    <% else %>
+      <% @inscritos.each do |person| %>
+        <tr>
+          <td><%= person.nombre %></td>
+          <td><%= person.apellido %></td>
+          <td><%= person.correo %></td>
+          <td><%= person.cedula %></td>
+          <td><%= person.curso_id %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
