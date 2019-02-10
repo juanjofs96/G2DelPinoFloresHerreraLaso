@@ -1,17 +1,18 @@
 <h1>Nueva Noticia</h1>
-
-<%= form_with scope: :article, url: articles_path, local: true do |form| %>
-  <p>
+<div class="text-center">
+  <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+  
     <%= form.label :titulo %><br>
-    <%= form.text_field :titulo %>
-  </p>
+    <%= form.text_field :titulo %><br>
+  
  
-  <p>
+  
     <%= form.label :texto %><br>
-    <%= form.text_area :texto %>
-  </p>
+    <%= form.text_area :texto %><br>
+  
  
-  <p>
+  
     <%= form.submit "Crear"%>
-  </p>
+  
 <% end %>
+</div>
