@@ -27,14 +27,6 @@ class EstudiantesController < ApplicationController
 
 	def update
 		@estudiante = current_estudiante
-
-		#@estudiante = current_estudiante
-		#puts @estudiante.cedula
-		#domicilio = params[:domicilio]
-		#NO LEE DOMICILIO 
-		#current_estudiante.domicilio = domicilio
-		#current_estudiante.save
-		#puts @estudiante.cedula
 		@estudiante.update(domicilio: params[:domicilio])
 		redirect_to '/estudiantes/cuenta'
 

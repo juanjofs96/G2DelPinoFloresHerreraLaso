@@ -1,9 +1,75 @@
-<%= form_with(model: [current_estudiante, current_estudiante.inscripcions.build ], local: true) do |form| %>
- 	<%= form.label :Estudiante  %>
-    <% emp_array = [current_estudiante.id] %>
-    <%= form.select :estudiante_id, options_for_select(emp_array) %> 
-    <%= form.label :Curso  %>
-    <% cursos = Curso.all.map { |n| [n.nombre, n.id] } %>
-    <%= form.select :curso_id, options_for_select(cursos) %> 
- 	<%= form.submit "registrar" %>
-<% end %>
+<h2>Selecciona un curso</h2>
+<div class="text-center">
+	<%= form_with(model: [current_estudiante, current_estudiante.inscripcions.build ], local: true) do |form| %>
+ 		<%= form.label :Estudiante  %>
+    	<% emp_array = [current_estudiante.id] %>
+    	<%= form.select :estudiante_id, options_for_select(emp_array) %> 
+    	<%= form.label :Curso  %>
+    	<% cursos = Curso.all.map { |n| [n.nombre, n.id] } %>
+    	<%= form.select :curso_id, options_for_select(cursos) %> 
+ 		<%= form.submit "registrar" %>
+	<% end %>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row">
+    <div class="w-100 p-3"> </div>
+</div>
+<div class="row bg-secondary" id="social">
+    <div class="col-xl-12">
+        <div class="row">
+           	<ul class="col-xl-12 list-inline mx-auto" id="redes">
+              <li class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 list-inline-item"><a id="face" href="https://www.facebook.com/pg/politecnica.apn/posts/?ref=page_internal">facebook</a></li>
+              <li class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 list-inline-item"><a id="twi" href="#">twitter</a></li>
+              <li class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 list-inline-item"><a id="insta" href="https://www.instagram.com/politecnica.apn/?hl=es-la">instagram</a></li>
+            </ul> 
+         </div>
+     </div>
+</div>
+      
+<div class="row">
+    <footer class="col-xl-12">
+        <p class="text-center">&copy;2019 Academia Politécnica de Nivelación. Todos los derechos reservados.</p>
+        <p class="text-right">Sitio desarrollado por: Juan José Flores y Anthony Herrera</p>
+    </footer>
+</div>
