@@ -56,6 +56,10 @@ Rails.application.routes.draw do
   
   post 'send/create'
 
+  resources :grafico1, only: [:index]
+  resources :grafico2, only: [:index]
+  resources :grafico3, only: [:index]
+
   resources :pagos do
     resources :facturas, shallow: true #shalow nesting
   end
