@@ -17,7 +17,14 @@ class InscripcionsController < ApplicationController
 
   def create
   	@estudiante = Estudiante.find(params[:estudiante_id])
-  	@inscripcion = @estudiante.inscripcions.create!(inscripcion_params)
+    @inscripcion = @estudiante.inscripcions.create!(inscripcion_params)
+    @person = Person.new
+    @person.nombre = @estudiante.nombres
+    @person.apellido = @estudiante.apellidos
+    @person.correo = @estudiante.email
+    @person.cedula = @estudiante.cedula
+    @person.curso_id = @inscripcion.curso_id
+    @person.save
     respond_to do |format|
       if @inscripcion.save
         format.html { redirect_to estudiantes_cuenta_path, notice: 'Inscripcion exitosa'}
