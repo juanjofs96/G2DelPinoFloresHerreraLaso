@@ -102,11 +102,12 @@
         <section class="mt-5 col-xl-12">
             <h3 class="mt-3 col-xl-12 text-center">Confía en nosotros!</h3>
             <div class="align-items-center" id="grafica"></div>
-            <div class="align-items-center" id="chart">Grafica 1</div>
-            <div class="align-items-center" id="chart">Grafica 2</div>
-            <svg class="align-items-center" width="1000" height="500"></svg> 
-            <div class="align-items-center" id="chart3">Grafica 3</div>
-            <svg width = "400" height = "400"></svg>
+            <h3 class="mt-3 col-xl-12 text-center">Gráfica número de estudiantes por curso</h3>
+            <svg class="align-items-center" width="1000" height="500" id="chart1"></svg> 
+            <h3 class="mt-3 col-xl-12 text-center">Gráfica número de cursos por estudiante</h3>
+            <svg class="align-items-center" width="1000" height="500" id="chart2"></svg> 
+            <h3 class="mt-3 col-xl-12 text-center">Gráfica número de profesores por materia</h3>
+            <svg class="align-items-center" width="1000" height="500" id="chart3"></svg> 
         </section>
 
         </div>
@@ -136,7 +137,9 @@
     <%= javascript_include_tag 'grafica.js' %>
 
     <script>
+      grafico1();
       grafico2();
+      grafico3();
 
     </script>
 
