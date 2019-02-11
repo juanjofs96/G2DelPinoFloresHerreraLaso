@@ -5,7 +5,6 @@ class EstudiantesController < ApplicationController
 	def cuenta
 		@estudiante = current_estudiante
 		@notas = Calificacion.find_by estudiante: @estudiante.cedula
-
 		@tmp = Inscripcion.where(estudiante_id: @estudiante.id)
 		@cursoList = []
 		@tmp.each do |m|

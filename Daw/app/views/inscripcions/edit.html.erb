@@ -1,3 +1,5 @@
+<h2>Cambiar de curso</h2>
+<div class="text-center">
 <%= form_with(model: [current_estudiante, @inscripcion], local: true) do |f| %>
  	<%= f.label :Estudiante  %>
     <% emp_array = [current_estudiante.id] %>
@@ -7,3 +9,4 @@
     <%= f.select :curso_id, options_for_select(cursos) %> 
  	<%= f.submit "Actualizar" %>
 <% end %>
+<div class="text-center">

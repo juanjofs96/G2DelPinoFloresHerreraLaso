@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>User Count</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -11,7 +11,17 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid">
+  <div class="row">
+    <header class="col-sm-12">
+      <div class="row justify-content-center">
+        <h1 class="col-xl-10">Academia Politécnica de Nivelación</h1>
+        <!--img id="logo" class="img-responsive" src="images/logonavidad.jpg" alt="logo"-->
+        <%= link_to image_tag("logonavidad.jpg", id: "logo", class: "img-responsive") %>
+      </div>
+    </header>
+        
+  </div>
 	<div class="row sticky-top" id="barralinks">
     	<nav class="navbar navbar-expand-xl navbar-dark col-xl-12">
         	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuPrincipal">
@@ -19,7 +29,7 @@
          	</button>
          	<div id="menuPrincipal" class="collapse navbar-collapse">
            		<ul class="list-inline navbar-nav mx-auto">
-              		<li class="mr-5 list-inline-item nav-item active" ><h3>Bienvenido <%= current_estudiante.nombres %> <%= current_estudiante.apellidos %></h3></li>
+              		<li class="mr-5 list-inline-item nav-item active" ><h3 id="welcome">Bienvenido <%= current_estudiante.nombres %> <%= current_estudiante.apellidos %></h3></li>
             	</ul>
             	<ul class="nav navbar-nav navbar-right">
               		<li><h3><%= link_to("Logout", destroy_estudiante_session_path, class: "nav-link", method: "delete") %></h3></li>
@@ -32,7 +42,6 @@
     <li class="active"><a data-toggle="tab" href="#perfil">Perfil</a></li>
     <li><a data-toggle="tab" href="#calificacion">Calificaciones</a></li>
     <li><a data-toggle="tab" href="#curso">Cursos</a></li>
-    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
   </ul>
 
   <div class="tab-content">
@@ -64,12 +73,78 @@
     <br>
     <a class="btn btn-primary" href=<%=edit_estudiante_registration_path%> role="button">Editar Perfil</a>
     <h4><%= link_to "Cambiar Contraseña", '/estudiantes/edit' %></h4>
+    <div class="row">
+      <div class="w-100 p-3"> </div>
+    </div>
+    <div class="row">
+      <div class="w-100 p-3"> </div>
+    </div>
+    <div class="row">
+      <div class="w-100 p-3"> </div>
+    </div>
+    <div class="row">
+      <div class="w-100 p-3"> </div>
+    </div>
     </div>
 
     <div id="calificacion" class="tab-pane fade">
       <h3>Calificaciones</h3>
       <p>Aqui debe mostrar sus calificaciones.</p>
       <%= react_component "Calificaciones" , {post: @notas} %>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
     </div>
 
     <div id="curso" class="tab-pane fade">
@@ -100,11 +175,65 @@
       </table>
        
       <a class="btn btn-primary" href=<%=new_estudiante_inscripcion_path(current_estudiante)%> role="button">Añadir curso</a>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
+      <div class="row">
+        <div class="w-100 p-3"> </div>
+      </div>
     </div>
-    <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+  </div>
+  <div class="row bg-secondary" id="social">
+    <div class="col-xl-12">
+      <div class="row">
+        <ul class="col-xl-12 list-inline mx-auto" id="redes">
+          <li class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 list-inline-item"><a id="face" href="https://www.facebook.com/pg/politecnica.apn/posts/?ref=page_internal">facebook</a></li>
+          <li class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 list-inline-item"><a id="twi" href="#">twitter</a></li>
+          <li class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 list-inline-item"><a id="insta" href="https://www.instagram.com/politecnica.apn/?hl=es-la">instagram</a></li>
+        </ul> 
+      </div>
     </div>
+  </div>
+      
+
+  <div class="row">
+    <footer class="col-xl-12">
+      <p class="text-center">&copy;2019 Academia Politécnica de Nivelación. Todos los derechos reservados.</p>
+      <p class="text-right">Sitio desarrollado por: Juan José Flores y Anthony Herrera</p>
+    </footer>
   </div>
 </div>
 
