@@ -9,6 +9,11 @@ class CalendarioController < ApplicationController
 
   	#	end
   	#end
+    #response = HTTParty.get("http://localhost:3000/grafico1.json", timeout: 5)
+    #puts response.to_a;
+    #puts response.body;
+    #puts response.to_h;
+    #json = JSON.parse(response.body);
 
   #var rawData = JSON.parse("localhost:3000/grafico1.json");
 

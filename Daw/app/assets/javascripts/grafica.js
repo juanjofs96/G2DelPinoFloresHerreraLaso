@@ -19,13 +19,66 @@ $('.calendario.index').ready(function(){
 	addChart();
 
 })
+ 
+function grafico2(){
 
-function grafico1(){
+	const svg = d3.select("svg"), 
+	margin = {top: 20, right: 20, bottom: 30, left: 40}, 
+	width = +svg.attr("width") - margin.left - margin.right, 
+	height = +svg.attr("height") - margin.top - margin.bottom, 
+	x = d3.scaleBand().rangeRound([0, width]).padding(0.2), 
+	y = d3.scaleLinear().rangeRound([height, 0]), 
+	g = svg.append("g") 
+		.attr("transform", `translate(${margin.left},${margin.top})`); 
+
+	var array = [];	
+	d3.json("http://localhost:3000/grafico2.json").then(function(data,error) {
+		console.log(data);
+		var key;
+		
+
+		for(key in data){
+    		if(data.hasOwnProperty(key)){
+        		array.push({'estudiante' : key, 'cursos' : data[key]});
+    		}
+		}
+		
+
+		x.domain(array.map(d => d.estudiante)); 
+		y.domain([0, d3.max(array, d => d.cursos)]); 
+		 
+		g.append("g") 
+		.attr("class", "axis axis-x") 
+		.attr("transform", `translate(0,${height})`) 
+		.call(d3.axisBottom(x)); 
+		 
+		g.append("g") 
+		.attr("class", "axis axis-y") 
+		.call(d3.axisLeft(y).ticks(10)); 
+ 		
+		
+
+		g.selectAll(".bar") 
+		.data(array) 
+		.enter().append("rect") 
+		.attr("class", "bar") 
+		.attr("x", d => x(d.estudiante)) 
+		.attr("y", d => y(d.cursos)) 
+		.attr("width", x.bandwidth()) 
+		.attr("height", d => height - y(d.cursos)); 
+		console.log(array);
+
+	});	
+}
+
+
+
+function grafico3(){
 	const width = 540;
     const height = 540;
     const radius = Math.min(width, height) / 2;
 
-    const svg = d3.select("#chart-area")
+    const svg = d3.select("#chart")
         .append("svg")
             .attr("width", width)
             .attr("height", height)
@@ -36,25 +89,12 @@ function grafico1(){
          "#e78ac3","#a6d854","#ffd92f"]);
 
     const pie = d3.pie()
-        .value(d => d.count)
+        .value(d => d.estudiante_id)
         .sort(null);
 
     const arc = d3.arc()
         .innerRadius(0)
         .outerRadius(radius);
-
-    function type(d) {
-        d.apples = Number(d.apples);
-        d.oranges = Number(d.oranges);
-        return d;
-    }
-
-    function arcTween(a) {
-        const i = d3.interpolate(this._current, a);
-        this._current = i(1);
-        return (t) => arc(i(t));
-    }
-
 
 	d3.json("http://localhost:3000/grafico1.json", function(error, data){
 		console.log(data);

@@ -5,6 +5,22 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import "bootstrap";
 
+.bar {
+  fill: #71EEB8;
+}
+
+.bar:hover {
+  fill: slateblue;
+}
+
+.axis-x path {
+  display: none;
+}
+
+.axis text {
+  font-weight: bold;
+}
+
 html{
 	min-height: 100%;
 	position: relative;
