@@ -52,6 +52,8 @@ function loadNewsXml() {
   });
 }
 
+
+
 $(document).ready(function(){
   loadNewsJson();
   //loadNewsXml();
@@ -84,5 +86,25 @@ $(document).ready(function(){
 
     return false;
     
-  })
+  });
+  
+  $.ajax({
+    type:"GET",
+    url:"/cursos/todos",
+    dataType:"json",
+    success:function(result){
+      result.forEach(function(e){
+        $('#selectCurso').append($("<option />").val(e.id).text(e.id)); 
+      });
+    }
+  });
+  $("#submitQueryPeople").click(function(e){
+
+    var curso = $("#selectCurso").val()
+    var domain = location.protocol + "//" + location.host
+    console.log(curso)
+    console.log(domain)
+    $(location).attr('href',domain+"/people/inscritos?id="+curso);
+
+  });
 });

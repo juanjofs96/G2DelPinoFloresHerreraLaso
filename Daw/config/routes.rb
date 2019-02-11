@@ -71,6 +71,9 @@ Rails.application.routes.draw do
   end
 
   resources :cursos do
+    collection do
+      get 'todos'
+    end 
     resources :inscripcions
     resources :calificacions
   end

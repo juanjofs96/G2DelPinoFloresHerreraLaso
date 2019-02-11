@@ -79,7 +79,10 @@
     <div id="curso" class="tab-pane fade">
       <h3>Cursos</h3>
        
-      <a class="btn btn-primary" href=<%=new_article_path%> role="button">Añadir noticia</a>
+      <%= form_with url:''  do |form| %>
+        <select id="selectCurso"></select>
+        <%= submit_tag "Ver Estudiantes", :id=> "submitQueryPeople" %>
+      <% end %>
     </div>
   </div>
 </div>
