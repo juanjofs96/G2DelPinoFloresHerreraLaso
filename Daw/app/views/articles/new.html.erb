@@ -1,6 +1,6 @@
 <h1>Nueva Noticia</h1>
 <div class="text-center">
-  <%= form_with scope: :article, url: articles_path, local: true do |form| %>
+  <%= form_with scope: :article, url: articles_path do |form| %>
   
     <%= form.label :titulo %><br>
     <%= form.text_field :titulo %><br>
