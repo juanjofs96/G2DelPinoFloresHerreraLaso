@@ -50,12 +50,24 @@ class InscripcionsController < ApplicationController
     end
   end
 
+ """ def destroy
+       @inscripcion = Inscripcion.find(params[:id])
+       @inscripcion.destroy
+       redirect_to estudiantes_cuenta_path
+     end"""
+
   def destroy
     @inscripcion = Inscripcion.find(params[:id])
-    @inscripcion.destroy
-    redirect_to estudiantes_cuenta_path
+    respond_to do |format|
+      if @inscripcion.destroy
+        format.js
+        format.json {render json: @inscripcion, status: 'success', message: 'Inscripcion Eliminada'}
+      else
+        format.json {render json: @inscripcion.errors ,status: :unprocessable_entity}
+      end
+    end
   end
-
+  
   private
     def inscripcion_params
       params.require(:inscripcion).permit(:estudiante_id, :curso_id)

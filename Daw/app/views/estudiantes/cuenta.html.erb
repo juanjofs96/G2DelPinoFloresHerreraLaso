@@ -162,7 +162,7 @@
       </thead>
       <tbody>
         <% @cursoList.each_index do |p| %>
-        <tr>
+        <tr id = "<%= @cursoList[p].id_curso %>">
           <td><%= @cursoList[p].nombre %></td>
           <td><%= @cursoList[p].duracion %> horas</td>
           <td><%= @cursoList[p].id_curso %></td>
@@ -175,7 +175,7 @@
       </table>
        
       <a class="btn btn-primary" href=<%=new_estudiante_inscripcion_path(current_estudiante)%> role="button">Añadir curso</a>
-      <div class="row">
+      <div id = "destruccion" class="row">
         <div class="w-100 p-3"> </div>
       </div>
       <div class="row">
