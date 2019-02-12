@@ -104,7 +104,7 @@ $(document).ready(function(){
     dataType:"json",
     success:function(result){
       result.forEach(function(e){
-        $('#tablaCompaneros').append("<tr class=\'estudiante\'><td>"+e.cedula+"</td><td>"+e.nombre+"</td><td>"+e.apellido+"</td><td>"+e.correo+"</td><td class=\'curso\'>"+e.curso_id+"</td></tr>"); 
+        $('#tablaCompanerosBody').append("<tr class=\'estudiante\'><td>"+e.cedula+"</td><td>"+e.nombre+"</td><td>"+e.apellido+"</td><td>"+e.correo+"</td><td class=\'curso\'>"+e.curso_id+"</td></tr>"); 
       });
     }
   });

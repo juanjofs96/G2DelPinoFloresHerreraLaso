@@ -123,14 +123,17 @@
         <select id="selectCurso"></select>
         <button type = "button" id = "submitQueryPeople">Ver Estudiantes</button>
       <% end %>
-      <table style="width:100%" id= "tablaCompaneros">
-        <tr>
-          <th>Cedula</th>
-          <th>Nombre</th>
-          <th>Apellido</th> 
-          <th>Correo</th>
-          <th>Curso</th>
-        </tr>
+      <table id= "tablaCompaneros" class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Apellido</th> 
+            <th>Correo</th>
+            <th>Curso</th>
+          </tr>
+        </thead>
+        <tbody id ="tablaCompanerosBody"></tbody>
       </table>
       <div class="row">
         <div class="w-100 p-3"> </div>
