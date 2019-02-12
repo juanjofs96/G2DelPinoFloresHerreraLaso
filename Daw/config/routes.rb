@@ -89,7 +89,12 @@ Rails.application.routes.draw do
   resources :articles
 
 
-  resources :people, except: [:show]
+  resources :people, except: [:show] do
+    collection do
+      get 'companeros'
+    end
+  end
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
