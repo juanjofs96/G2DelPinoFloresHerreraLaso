@@ -26,12 +26,13 @@ class EstudiantesController < ApplicationController
 
 	def update
 		estudiante = Estudiante.find(params[:id])
-		if estudiante.update_attributes(estudiante_params)
-			render json: {status: 'success', message: 'Estudiante Actualizado', data: estudiante},
-			 status: :ok
-		else
-			render json: {status: 'error', message: 'Error al actualizar', data: estudiante.errors},
-			status: :unprocessable_entity
+		respond_to do |format|
+			if estudiante.update_attributes(estudiante_params)
+				format.js
+				format.json {render json: estudiante, status: 'success', message: 'Estudiante Actualizado'}
+			else
+				format.json {render json: estudiante.errors ,status: :unprocessable_entity}
+			end
 		end
 	end
 
