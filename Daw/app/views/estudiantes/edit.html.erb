@@ -2,5 +2,12 @@
     <%= f.label 'Domicilio' %><br>
     <%= f.text_field :domicilio %><br>
   
-    <%= f.submit "Submit Article" %>
-  <% end %>
+    <%= f.submit "Actualizar  Domicilio", class: 'button' , :onclick => "crud_edit.js" %>
+<% end %>
+
+<div id="test">
+	<h4><%= link_to "Volver", '/estudiantes/cuenta' %></h4>
+</div>
+
+
+	

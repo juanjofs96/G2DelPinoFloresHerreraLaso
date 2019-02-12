@@ -25,10 +25,14 @@ class EstudiantesController < ApplicationController
 	end
 
 	def update
-		@estudiante = current_estudiante
-		@estudiante.update(domicilio: params[:domicilio])
-		redirect_to '/estudiantes/cuenta'
-
+		estudiante = Estudiante.find(params[:id])
+		if estudiante.update_attributes(estudiante_params)
+			render json: {status: 'success', message: 'Estudiante Actualizado', data: estudiante},
+			 status: :ok
+		else
+			render json: {status: 'error', message: 'Error al actualizar', data: estudiante.errors},
+			status: :unprocessable_entity
+		end
 	end
 
 	def delete
