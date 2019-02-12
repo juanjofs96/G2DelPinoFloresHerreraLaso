@@ -98,6 +98,17 @@ $(document).ready(function(){
       });
     }
   });
+  $.ajax({
+    type:"GET",
+    url:"/people/companeros",
+    dataType:"json",
+    success:function(result){
+      result.forEach(function(e){
+        console.log(e);
+        //$('#selectCurso').append($("<option />").val(e.id).text(e.id)); 
+      });
+    }
+  });
   $("#submitQueryPeople").click(function(e){
 
     var curso = $("#selectCurso").val()

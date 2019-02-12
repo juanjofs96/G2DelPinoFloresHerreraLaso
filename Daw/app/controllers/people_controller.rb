@@ -1,4 +1,11 @@
 class PeopleController < ApplicationController
+  respond_to :json, :html
+  def companeros
+      @curso = Person.all
+      respond_with(@curso)
+      puts @curso
+  end
+  
   def index
     @people = Person.all
     
