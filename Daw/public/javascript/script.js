@@ -57,7 +57,7 @@ function loadNewsXml() {
 $(document).ready(function(){
   loadNewsJson();
   //loadNewsXml();
-  $("button").click(function(e){
+  $(".btn").click(function(e){
 
     var texto = $('input#buscador').val();
     
@@ -104,8 +104,7 @@ $(document).ready(function(){
     dataType:"json",
     success:function(result){
       result.forEach(function(e){
-        console.log(e);
-        //$('#selectCurso').append($("<option />").val(e.id).text(e.id)); 
+        $('#tablaCompanerosBody').append("<tr class=\'estudiante\'><td>"+e.cedula+"</td><td>"+e.nombre+"</td><td>"+e.apellido+"</td><td>"+e.correo+"</td><td class=\'curso\'>"+e.curso_id+"</td></tr>"); 
       });
     }
   });
@@ -115,7 +114,13 @@ $(document).ready(function(){
     var domain = location.protocol + "//" + location.host
     console.log(curso)
     console.log(domain)
-    $(location).attr('href',domain+"/people/inscritos?id="+curso);
+    //$(location).attr('href',domain+"/people/inscritos?id="+curso);
 
+    $("tr.estudiante").each(function(){
+      $(this).show()
+      if($(this).find("td.curso").html().indexOf(curso) == -1) {
+        $(this).hide()
+      }
+    });
   });
 });

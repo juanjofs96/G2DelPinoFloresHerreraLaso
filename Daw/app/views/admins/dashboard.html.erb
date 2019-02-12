@@ -119,10 +119,22 @@
     <div id="curso" class="tab-pane fade">
       <h3>Cursos</h3>
        
-      <%= form_with url:''  do |form| %>
+      <%= form_tag do%>
         <select id="selectCurso"></select>
-        <%= submit_tag "Ver Estudiantes", :id=> "submitQueryPeople" %>
+        <button type = "button" id = "submitQueryPeople">Ver Estudiantes</button>
       <% end %>
+      <table id= "tablaCompaneros" class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Apellido</th> 
+            <th>Correo</th>
+            <th>Curso</th>
+          </tr>
+        </thead>
+        <tbody id ="tablaCompanerosBody"></tbody>
+      </table>
       <div class="row">
         <div class="w-100 p-3"> </div>
       </div>
